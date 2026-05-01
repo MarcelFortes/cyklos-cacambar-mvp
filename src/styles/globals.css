@@ -12,22 +12,48 @@
   --cacambar-dark: #1f1308;
 }
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  background-color: var(--cyklos-dark);
-  color: white;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "liga", "clig", "calt";
+  }
+
+  body {
+    @apply bg-cyklos-dark text-slate-100 antialiased;
+    background:
+      radial-gradient(circle at 15% 0%, rgba(34, 211, 238, 0.12), transparent 32%),
+      radial-gradient(circle at 90% 8%, rgba(139, 92, 246, 0.12), transparent 30%),
+      linear-gradient(180deg, #020617 0%, #070b1f 42%, #020617 100%);
+  }
+
+  ::selection {
+    background: rgba(34, 211, 238, 0.35);
+    color: #ffffff;
+  }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@layer utilities {
+  .cyklos-surface {
+    @apply border bg-cyklos-navy shadow-2xl;
+    border-color: rgba(34, 211, 238, 0.2);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+  }
 
-* {
-  box-sizing: border-box;
+  .cyklos-surface-strong {
+    @apply border bg-cyklos-navy shadow-2xl;
+    border-color: rgba(34, 211, 238, 0.34);
+    box-shadow: 0 28px 56px rgba(0, 0, 0, 0.42);
+  }
+
+  .cyklos-glow {
+    box-shadow: 0 18px 36px rgba(34, 211, 238, 0.2);
+  }
+
+  .purple-glow {
+    box-shadow: 0 18px 36px rgba(139, 92, 246, 0.2);
+  }
+
+  .cacambar-glow {
+    box-shadow: 0 18px 36px rgba(249, 115, 22, 0.2);
+  }
 }
