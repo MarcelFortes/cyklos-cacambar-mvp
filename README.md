@@ -159,7 +159,7 @@ cyklos-cacambar-mvp/
 ├── package.json
 ├── README.md
 ├── .env.example
-├── next.config.ts
+├── next.config.js
 ├── postcss.config.js
 ├── tailwind.config.ts
 ├── tsconfig.json
@@ -307,4 +307,4 @@ NFT-CTR is the compliance certificate.
 
 ## License
 
-This project is currently private and intended for hackathon evaluation and early-stage product development.
+This project is currently published for hackathon evaluation and early-stage product validation.
