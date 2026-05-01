@@ -2,6 +2,10 @@
 
 Circular economy proof infrastructure with a Solana-ready verification layer and CAÇAMBAR as the first operational application.
 
+## Live Demo
+
+https://cyklos-cacambar-mvp.vercel.app
+
 ## Project Overview
 
 **CYKLOS** is a Web3 infrastructure layer for circular economy proof, compliance and public verification.
