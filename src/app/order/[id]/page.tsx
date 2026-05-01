@@ -1,8 +1,17 @@
-import { demoOrder, demoNFTCTR } from "@/lib/mock-data";
-import { OrderTimeline } from "@/components/OrderTimeline";
-import { StatusBadge } from "@/components/StatusBadge";
+import { notFound } from "next/navigation";
 import Link from "next/link";
-import { CheckCircle2, ExternalLink, Truck } from "lucide-react";
+import { demoNFTCTR, demoOrder } from "@/lib/mock-data";
+import { OrderTimeline } from "@/components/OrderTimeline";
+import {
+  MapPin,
+  Package,
+  User,
+  DollarSign,
+  Hash,
+  ArrowRight,
+  LayoutDashboard,
+  ShoppingCart,
+} from "lucide-react";
 
 interface OrderPageProps {
   params: {
@@ -11,109 +20,148 @@ interface OrderPageProps {
 }
 
 export default function OrderPage({ params }: OrderPageProps) {
-  void params;
+  if (params.id !== demoOrder.id) {
+    notFound();
+  }
 
   const order = demoOrder;
 
   return (
-    <main className="min-h-screen bg-cyklos-dark text-white">
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <div className="mb-10 text-center">
-          <div className="mb-2 inline-flex items-center gap-2">
-            <Truck size={22} className="text-cacambar-orange" />
-            <p className="text-sm font-bold uppercase tracking-[0.35em] text-cacambar-orange">
-              CAÇAMBAR OPERATIONS
-            </p>
-          </div>
+    <main className="flex min-h-screen flex-col items-center bg-cyklos-dark px-4 py-12">
+      <div className="mx-auto w-full max-w-6xl text-center">
+        <h1 className="mb-4 text-4xl font-bold text-white">Order Tracking</h1>
 
-          <h1 className="text-4xl font-black leading-tight md:text-5xl">
-            Order Details: {order.id}
-          </h1>
+        <p className="mb-8 text-lg text-slate-300">
+          Follow the complete lifecycle from container delivery to destination
+          validation and NFT-CTR issuance.
+        </p>
 
-          <p className="mt-4 text-lg text-slate-300">
-            Track the lifecycle of your construction waste disposal order.
-          </p>
-        </div>
+        <div className="cyklos-surface mb-10 rounded-xl p-6 text-left">
+          <h2 className="mb-4 text-2xl font-bold text-white">Order Summary</h2>
 
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
-          <div className="lg:col-span-1">
-            <div className="rounded-xl border border-cacambar-orange/40 bg-cacambar-orange/10 p-6 shadow-lg backdrop-blur">
-              <h2 className="mb-4 text-2xl font-bold text-cacambar-orange">
-                Order Summary
-              </h2>
+          <div className="grid grid-cols-1 gap-x-8 gap-y-4 md:grid-cols-2 lg:grid-cols-3">
+            <div>
+              <p className="mb-1 flex items-center gap-2 text-sm font-semibold text-slate-300">
+                <User size={16} className="text-cyklos-cyan" />
+                Customer
+              </p>
+              <p className="text-base text-white">{order.customerName}</p>
+            </div>
 
-              <div className="space-y-3 text-slate-200">
-                <p>
-                  <span className="font-semibold">Supplier:</span>{" "}
-                  {order.supplierName}
-                </p>
+            <div>
+              <p className="mb-1 flex items-center gap-2 text-sm font-semibold text-slate-300">
+                <MapPin size={16} className="text-cacambar-orange" />
+                Service Address
+              </p>
+              <p className="text-base text-white">{order.customerAddress}</p>
+            </div>
 
-                <p>
-                  <span className="font-semibold">Waste Type:</span>{" "}
-                  {order.wasteType.replaceAll("_", " ")}
-                </p>
+            <div>
+              <p className="mb-1 flex items-center gap-2 text-sm font-semibold text-slate-300">
+                <User size={16} className="text-cacambar-orange" />
+                Supplier
+              </p>
+              <p className="text-base text-white">{order.supplierName}</p>
+            </div>
 
-                <p>
-                  <span className="font-semibold">Container Size:</span>{" "}
-                  {order.containerSize}
-                </p>
+            <div>
+              <p className="mb-1 flex items-center gap-2 text-sm font-semibold text-slate-300">
+                <Package size={16} className="text-cacambar-orange" />
+                Waste Type
+              </p>
+              <p className="text-base text-white">
+                {order.wasteType.replace(/_/g, " ")}
+              </p>
+            </div>
 
-                <p>
-                  <span className="font-semibold">Price:</span> R${" "}
-                  {order.price.toFixed(2)}
-                </p>
+            <div>
+              <p className="mb-1 flex items-center gap-2 text-sm font-semibold text-slate-300">
+                <Package size={16} className="text-cacambar-orange" />
+                Container Size
+              </p>
+              <p className="text-base text-white">{order.containerSize}</p>
+            </div>
 
-                <p>
-                  <span className="font-semibold">Order Date:</span>{" "}
-                  {new Date(order.createdAt).toLocaleDateString()}
-                </p>
+            <div>
+              <p className="mb-1 flex items-center gap-2 text-sm font-semibold text-slate-300">
+                <MapPin size={16} className="text-cyklos-cyan" />
+                Destination Facility
+              </p>
+              <p className="text-base text-white">
+                {order.destinationFacility}
+              </p>
+            </div>
 
-                <div className="flex items-center gap-2">
-                  <span className="font-semibold">Status:</span>
-                  <StatusBadge status={order.status} />
-                </div>
-              </div>
+            <div>
+              <p className="mb-1 flex items-center gap-2 text-sm font-semibold text-slate-300">
+                <DollarSign size={16} className="text-cacambar-orange" />
+                Service Price
+              </p>
+              <p className="text-base font-semibold text-cacambar-orange">
+                R$ {order.price.toFixed(2)}
+              </p>
             </div>
           </div>
-
-          <div className="lg:col-span-2">
-            <div className="rounded-xl border border-cacambar-orange/40 bg-cacambar-orange/10 p-6 shadow-lg backdrop-blur">
-              <h2 className="mb-6 text-2xl font-bold text-cacambar-orange">
-                Order Timeline
-              </h2>
-
-              <OrderTimeline events={order.trackingEvents} />
-            </div>
-          </div>
         </div>
 
-        <div className="mt-12 rounded-xl border border-cyklos-cyan/40 bg-cyklos-cyan/10 p-8 text-center shadow-lg backdrop-blur">
-          <div className="mb-4 inline-flex items-center gap-2">
-            <CheckCircle2 size={22} className="text-cyklos-cyan" />
-            <p className="text-sm font-bold uppercase tracking-[0.35em] text-cyklos-cyan">
-              CYKLOS PROOF LAYER
-            </p>
-          </div>
-
-          <h2 className="mb-4 text-3xl font-bold text-white">
-            Verifiable Waste Certificate (NFT-CTR)
+        <div className="cyklos-surface mb-10 rounded-xl p-6 text-left">
+          <h2 className="mb-4 text-2xl font-bold text-white">
+            Operational & Proof Timeline
           </h2>
 
-          <p className="text-lg text-slate-200">
-            A cryptographic fingerprint of this order&apos;s critical data is
-            prepared for a public Solana proof layer, enabling a verifiable and
-            tamper-resistant compliance record.
-          </p>
+          <OrderTimeline
+            events={order.trackingEvents}
+            currentStatus={order.status}
+          />
+        </div>
+
+        {order.status === "NFT_CTR_ISSUED" && (
+          <div className="cyklos-surface mb-10 flex flex-col justify-between gap-6 rounded-xl p-6 text-left md:flex-row md:items-center">
+            <div>
+              <h2 className="mb-2 text-2xl font-bold text-white">
+                Verifiable Compliance Certificate Issued
+              </h2>
+
+              <p className="text-lg text-slate-300">
+                Your NFT-CTR is ready. View the full audit-ready record.
+              </p>
+
+              <div className="mt-4 flex items-center gap-2">
+                <Hash size={18} className="text-cyklos-cyan" />
+                <p className="break-all font-mono text-sm text-cyklos-cyan">
+                  {demoNFTCTR.ctrHash}
+                </p>
+              </div>
+            </div>
+
+            <Link
+              href={`/nft-ctr/${demoNFTCTR.id}`}
+              className="purple-glow inline-flex flex-shrink-0 items-center justify-center gap-2 rounded-xl bg-cyklos-purple px-6 py-3 font-bold text-white transition hover:opacity-90"
+            >
+              View NFT-CTR Certificate
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+        )}
+
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <Link
+            href="/dashboard"
+            className="inline-flex items-center gap-2 rounded-xl border border-cyklos-cyan/40 px-6 py-3 font-bold text-cyklos-cyan transition hover:bg-[rgba(34,211,238,0.1)]"
+          >
+            <LayoutDashboard size={18} />
+            Go to Dashboard
+          </Link>
 
           <Link
-            href={`/nft-ctr/${demoNFTCTR.id}`}
-            className="mt-6 inline-flex items-center gap-2 rounded-xl bg-cyklos-purple px-6 py-3 text-lg font-bold text-slate-950 transition hover:bg-purple-400"
+            href="/marketplace"
+            className="inline-flex items-center gap-2 rounded-xl border border-cacambar-orange/40 px-6 py-3 font-bold text-cacambar-orange transition hover:bg-[rgba(249,115,22,0.1)]"
           >
-            View NFT-CTR Details
-            <ExternalLink size={20} />
+            <ShoppingCart size={18} />
+            Explore Marketplace
           </Link>
         </div>
-      </section>
+      </div>
     </main>
   );
 }

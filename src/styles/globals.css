@@ -4,12 +4,19 @@
 
 :root {
   --cyklos-navy: #070b1f;
+  --cyklos-navy-rgb: 7, 11, 31;
   --cyklos-cyan: #22d3ee;
+  --cyklos-cyan-rgb: 34, 211, 238;
   --cyklos-purple: #8b5cf6;
+  --cyklos-purple-rgb: 139, 92, 246;
   --cyklos-dark: #020617;
+  --cyklos-dark-rgb: 2, 6, 23;
   --cyklos-slate: #0f172a;
+  --cyklos-slate-rgb: 15, 23, 42;
   --cacambar-orange: #f97316;
+  --cacambar-orange-rgb: 249, 115, 22;
   --cacambar-dark: #1f1308;
+  --cacambar-dark-rgb: 31, 19, 8;
 }
 
 @layer base {
@@ -21,39 +28,39 @@
   body {
     @apply bg-cyklos-dark text-slate-100 antialiased;
     background:
-      radial-gradient(circle at 15% 0%, rgba(34, 211, 238, 0.12), transparent 32%),
-      radial-gradient(circle at 90% 8%, rgba(139, 92, 246, 0.12), transparent 30%),
-      linear-gradient(180deg, #020617 0%, #070b1f 42%, #020617 100%);
+      radial-gradient(circle at 15% 0%, rgba(var(--cyklos-cyan-rgb), 0.12), transparent 32%),
+      radial-gradient(circle at 90% 8%, rgba(var(--cyklos-purple-rgb), 0.12), transparent 30%),
+      linear-gradient(180deg, var(--cyklos-dark) 0%, var(--cyklos-navy) 42%, var(--cyklos-dark) 100%);
   }
 
   ::selection {
-    background: rgba(34, 211, 238, 0.35);
+    background-color: rgba(var(--cyklos-cyan-rgb), 0.3);
     color: #ffffff;
   }
 }
 
 @layer utilities {
   .cyklos-surface {
-    @apply border bg-cyklos-navy shadow-2xl;
-    border-color: rgba(34, 211, 238, 0.2);
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(var(--cyklos-cyan-rgb), 0.22);
+    background-color: rgba(var(--cyklos-navy-rgb), 0.95);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.36);
   }
 
   .cyklos-surface-strong {
-    @apply border bg-cyklos-navy shadow-2xl;
-    border-color: rgba(34, 211, 238, 0.34);
-    box-shadow: 0 28px 56px rgba(0, 0, 0, 0.42);
+    border: 1px solid rgba(var(--cyklos-cyan-rgb), 0.36);
+    background-color: rgba(var(--cyklos-navy-rgb), 1);
+    box-shadow: 0 28px 56px rgba(0, 0, 0, 0.44);
   }
 
   .cyklos-glow {
-    box-shadow: 0 18px 36px rgba(34, 211, 238, 0.2);
+    box-shadow: 0 18px 36px rgba(var(--cyklos-cyan-rgb), 0.2);
   }
 
   .purple-glow {
-    box-shadow: 0 18px 36px rgba(139, 92, 246, 0.2);
+    box-shadow: 0 18px 36px rgba(var(--cyklos-purple-rgb), 0.22);
   }
 
   .cacambar-glow {
-    box-shadow: 0 18px 36px rgba(249, 115, 22, 0.2);
+    box-shadow: 0 18px 36px rgba(var(--cacambar-orange-rgb), 0.22);
   }
 }
