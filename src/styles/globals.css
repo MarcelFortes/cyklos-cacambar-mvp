@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cyklos-navy: #070b1f;
+  --cyklos-cyan: #22d3ee;
+  --cyklos-purple: #8b5cf6;
+  --cyklos-dark: #020617;
+  --cyklos-slate: #0f172a;
+  --cacambar-orange: #f97316;
+  --cacambar-dark: #1f1308;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--cyklos-dark);
+  color: white;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
