@@ -3,22 +3,26 @@ interface BrandLogoProps {
   className?: string;
 }
 
+const logoMap = {
+  cyklos: {
+    src: "/brand/cyklos-logo.png",
+    alt: "CYKLOS logo",
+  },
+  cacambar: {
+    src: "/brand/cacambar-logo.png",
+    alt: "CAÇAMBAR logo",
+  },
+};
+
 export function BrandLogo({ type, className = "" }: BrandLogoProps) {
-  if (type === "cyklos") {
-    return (
-      <span
-        className={`text-2xl font-black tracking-tight text-white group-hover:text-cyklos-cyan ${className}`}
-      >
-        CYKLOS
-      </span>
-    );
-  }
+  const logo = logoMap[type];
 
   return (
-    <span
-      className={`rounded-full border border-cacambar-orange/50 bg-cacambar-orange/15 px-2 py-1 text-xs font-bold uppercase tracking-wide text-cacambar-orange ${className}`}
-    >
-      CAÇAMBAR APP
-    </span>
+    <img
+      src={logo.src}
+      alt={logo.alt}
+      className={`block h-auto w-auto object-contain ${className}`}
+      draggable={false}
+    />
   );
 }

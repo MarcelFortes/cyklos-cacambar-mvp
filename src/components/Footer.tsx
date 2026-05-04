@@ -1,52 +1,28 @@
-import Link from "next/link";
-import { BrandLogo } from "@/components/BrandLogo";
+import { BrandLogo } from "./BrandLogo";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-cyklos-navy py-10 text-slate-300">
-      <div className="mx-auto grid max-w-6xl gap-8 px-6 md:grid-cols-[1.2fr_1fr_1fr]">
-        <div>
-          <div className="mb-4 flex items-center gap-3">
-            <BrandLogo type="cyklos" />
-            <BrandLogo type="cacambar" />
+    <footer className="border-t border-slate-700/60 bg-cyklos-dark/95">
+      <div className="mx-auto max-w-7xl px-6 py-10">
+        <div className="flex flex-col items-center gap-6 text-center">
+          <div className="flex flex-wrap items-center justify-center gap-7 rounded-[24px] border border-slate-700/60 bg-white/[0.018] px-8 py-5 shadow-[0_0_24px_rgba(0,0,0,0.16)]">
+            <BrandLogo type="cyklos" className="h-[54px] md:h-[58px]" />
+
+            <span className="hidden h-12 w-px bg-slate-600/65 md:block" />
+
+            <BrandLogo type="cacambar" className="h-[48px] md:h-[52px]" />
           </div>
-          <p className="max-w-xl text-sm leading-6 text-slate-300">
-            CYKLOS is the infrastructure layer. CAÇAMBAR is the operational
-            marketplace. NFT-CTR is the verifiable compliance certificate for
-            circular economy proof.
+
+          <p className="max-w-3xl text-base text-slate-300">
+            Building the infrastructure for a transparent, auditable and
+            efficient circular economy.
+          </p>
+
+          <p className="text-sm text-slate-500">
+            © 2026 CYKLOS / CAÇAMBAR. Built for hackathon evaluation and
+            early-stage product validation.
           </p>
         </div>
-
-        <div>
-          <p className="mb-3 text-sm font-bold uppercase tracking-wide text-cyklos-cyan">
-            Demo Route
-          </p>
-          <div className="flex flex-col gap-2 text-sm">
-            <Link href="/request" className="hover:text-white">
-              Request Service
-            </Link>
-            <Link href="/marketplace" className="hover:text-white">
-              Marketplace
-            </Link>
-            <Link href="/dashboard" className="hover:text-white">
-              Dashboard
-            </Link>
-          </div>
-        </div>
-
-        <div>
-          <p className="mb-3 text-sm font-bold uppercase tracking-wide text-cyklos-purple">
-            Proof Layer
-          </p>
-          <p className="text-sm leading-6 text-slate-300">
-            Designed for a public verification layer. This MVP uses simulated
-            Solana proof and remains ready for a Devnet milestone.
-          </p>
-        </div>
-      </div>
-
-      <div className="mx-auto mt-8 max-w-6xl px-6 text-xs text-slate-500">
-        &copy; {new Date().getFullYear()} CYKLOS. All rights reserved.
       </div>
     </footer>
   );
