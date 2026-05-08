@@ -28,7 +28,7 @@ const solutionCards = [
   {
     title: "CAÇAMBAR operational application",
     description:
-      "End-to-end application for service requests, supplier selection, entrega, retirada e rastreio da destinação.",
+      "End-to-end application for service requests, supplier selection, delivery, pickup and destination tracking.",
     icon: Route,
     accent: "cacambar",
     href: "/request",
@@ -55,7 +55,7 @@ const journeySteps = [
   {
     number: "02",
     title: "Selecionar",
-    detail: "Escolher fornecedor",
+    detail: "Select supplier",
     icon: Boxes,
     accent: "text-cyklos-cyan",
   },
@@ -79,25 +79,25 @@ const technicalCards = [
   {
     title: "Solana não é o banco de dados",
     description:
-      "Os dados operacionais permanecem off-chain. Os hashes críticos do ciclo são preparados para verificação pública em uma camada pronta para Solana.",
+      "Operational data remains off-chain. Critical cycle hashes are prepared for public verification on a Solana-ready layer.",
     icon: Database,
     accent: "cyklos",
     href: "/dashboard",
     cta: "Saiba mais",
   },
   {
-    title: "Fluxo operacional primeiro",
+    title: "Operational flow first",
     description:
-      "A logística real acontece off-chain: solicitações, matches, rotas e entregas. A CYKLOS verifica. A CAÇAMBAR opera.",
+      "Real logistics happen off-chain: requests, matches, routes and deliveries. CYKLOS verifies. CAÇAMBAR operates.",
     icon: ClipboardCheck,
     accent: "cacambar",
     href: "/request",
     cta: "Explorar fluxo",
   },
   {
-    title: "Certificado de compliance",
+    title: "Compliance certificate",
     description:
-      "O NFT-CTR transforma cada ciclo concluído em um certificado verificável para ESG, licitações públicas e auditorias.",
+      "The NFT-CTR turns each completed cycle into a verifiable certificate for ESG, public bids and audits.",
     icon: FileCheck2,
     accent: "purple",
     href: "/nft-ctr/NFT-CTR-0001",
@@ -225,7 +225,7 @@ export default function HomePage() {
 
             <div className="mb-4 inline-flex rounded-full border border-cyklos-cyan/40 bg-cyklos-dark/40 px-4 py-2 backdrop-blur-md">
               <p className="text-[11px] font-black uppercase tracking-[0.30em] text-cyklos-cyan">
-                Infraestrutura CYKLOS / Aplicação CAÇAMBAR
+                CYKLOS Infrastructure / CAÇAMBAR Application
               </p>
             </div>
 
@@ -325,7 +325,7 @@ export default function HomePage() {
                   {card.featured && (
                     <div className="relative mb-4 inline-flex rounded-full border border-cacambar-orange/35 bg-cacambar-orange/10 px-3 py-1">
                       <span className="text-[10px] font-black uppercase tracking-[0.28em] text-cacambar-orange">
-                        Camada de aplicação viva
+                        Live application layer
                       </span>
                     </div>
                   )}
