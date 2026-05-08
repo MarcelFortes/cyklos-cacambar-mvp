@@ -28,7 +28,7 @@ const solutionCards = [
   {
     title: "CAÇAMBAR operational application",
     description:
-      "Aplicação ponta a ponta para solicitação de serviço, seleção de fornecedor, entrega, retirada e rastreio da destinação.",
+      "End-to-end application for service requests, supplier selection, entrega, retirada e rastreio da destinação.",
     icon: Route,
     accent: "cacambar",
     href: "/request",
@@ -249,11 +249,11 @@ export default function HomePage() {
             <div className="mt-5 space-y-2 text-base leading-7 text-slate-300 md:text-lg">
               <p>
                 <span className="font-bold text-cyklos-cyan">CYKLOS</span>{" "}
-                fornece a camada de verificação pública.
+                provides the public verification layer.
               </p>
               <p>
                 <span className="font-bold text-cacambar-orange">CAÇAMBAR</span>{" "}
-                opera o ecossistema logístico.
+                operates the logistics ecosystem.
               </p>
             </div>
 
