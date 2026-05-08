@@ -18,15 +18,15 @@ import {
 
 const solutionCards = [
   {
-    title: "Infraestrutura à prova de CYKLOS",
+    title: "CYKLOS verification infrastructure",
     description:
-      "Camada pública de verificação para hashes de CTR, provas prontas para Solana e registros auditáveis da economia circular.",
+      "Public verification layer for CTR hashes, Solana-ready proofs and auditable circular economy records.",
     icon: ShieldCheck,
     accent: "cyklos",
     href: "/dashboard",
   },
   {
-    title: "CAÇAMBAR aplicação operacional",
+    title: "CAÇAMBAR operational application",
     description:
       "Aplicação ponta a ponta para solicitação de serviço, seleção de fornecedor, entrega, retirada e rastreio da destinação.",
     icon: Route,
@@ -35,9 +35,9 @@ const solutionCards = [
     featured: true,
   },
   {
-    title: "Certificado NFT-CTR",
+    title: "NFT-CTR certificate",
     description:
-      "Certificado verificável de conformidade do transporte de resíduos emitido após a validação do ciclo operacional.",
+      "Verifiable waste transport compliance certificate issued after the operational cycle is validated.",
     icon: BadgeCheck,
     accent: "purple",
     href: "/nft-ctr/NFT-CTR-0001",
@@ -101,7 +101,7 @@ const technicalCards = [
     icon: FileCheck2,
     accent: "purple",
     href: "/nft-ctr/NFT-CTR-0001",
-    cta: "Ver certificado",
+    cta: "View certificate",
   },
 ];
 
@@ -239,11 +239,11 @@ export default function HomePage() {
             </div>
 
             <h1 className="mx-auto max-w-5xl text-[2rem] font-black leading-[1.04] tracking-tight text-white md:text-[2.75rem] lg:text-[3.15rem]">
-              Transformando a logística de resíduos de construção em{" "}
+              Turning construction waste logistics into{" "}
               <span className="bg-gradient-to-r from-cyklos-cyan via-blue-400 to-cyklos-purple bg-clip-text text-transparent">
-                economia circular verificável
+                verifiable circular economy
               </span>{" "}
-              infraestrutura.
+              infrastructure.
             </h1>
 
             <div className="mt-5 space-y-2 text-base leading-7 text-slate-300 md:text-lg">
@@ -261,7 +261,7 @@ export default function HomePage() {
               <ActionButton
                 href="/request"
                 variant="cacambar"
-                title="Iniciar Demo CAÇAMBAR"
+                title="Start demo"
                 icon={
                   <ButtonIcon variant="cacambar">
                     <img
@@ -277,7 +277,7 @@ export default function HomePage() {
               <ActionButton
                 href="/dashboard"
                 variant="cyklos"
-                title="Ver Painel CYKLOS"
+                title="View dashboard"
                 icon={
                   <ButtonIcon variant="cyklos">
                     <img
@@ -293,7 +293,7 @@ export default function HomePage() {
               <ActionButton
                 href="/nft-ctr/NFT-CTR-0001"
                 variant="purple"
-                title="Ver certificado NFT-CTR"
+                title="View certificate"
                 icon={
                   <ButtonIcon variant="purple">
                     <CreditCard size={21} />
