@@ -146,6 +146,23 @@ CYKLOS uses the idea of a Solana proof layer because it enables:
 
 In the current MVP, Solana integration is simulated. The next technical milestone is to replace the mock proof with at least one real Solana Devnet transaction.
 
+## Open Source & Composability
+
+CYKLOS is designed as an open and composable verification layer for circular economy workflows on Solana.
+
+The MVP focuses on construction waste logistics through CAÇAMBAR, but the underlying model is reusable across multiple waste and compliance verticals. Each lifecycle event can generate a signed record, an event hash and a verifiable proof anchored to Solana.
+
+Future versions of CYKLOS may expose reusable primitives such as:
+
+- NFT-CTR metadata standards
+- event-hash schemas for waste lifecycle tracking
+- public verification APIs
+- compliance dashboards
+- integrations with municipalities, recyclers and ESG platforms
+- wallet-based supplier and destination reputation
+
+This makes CYKLOS more than a closed marketplace. It is designed as reusable infrastructure that other circular economy applications can build on.
+
 ## Tech Stack
 
 - Next.js
@@ -190,125 +207,3 @@ cyklos-cacambar-mvp/
     │   └── nft-ctr.ts
     └── styles/
         └── globals.css
-```
-
-## Getting Started
-
-### 1. Install dependencies
-
-```bash
-npm install
-```
-
-### 2. Create environment file
-
-Create a `.env.local` file in the project root.
-
-Use `.env.example` as reference.
-
-### 3. Run the development server
-
-```bash
-npm run dev
-```
-
-### 4. Open the application
-
-```txt
-http://localhost:3000
-```
-
-## Available Scripts
-
-```bash
-npm run dev
-npm run build
-npm run start
-npm run lint
-```
-
-## Demo Flow
-
-Recommended demo route:
-
-1. Open the homepage.
-2. Click **Explore CAÇAMBAR Marketplace**.
-3. Select a supplier.
-4. Review the order lifecycle.
-5. Open the NFT-CTR certificate.
-6. Open the CYKLOS dashboard.
-
-This route demonstrates:
-
-- marketplace operation
-- supplier selection
-- order tracking
-- waste lifecycle events
-- CTR hash generation
-- simulated Solana proof
-- NFT-CTR compliance certificate
-- CYKLOS proof dashboard
-
-## Current Limitations
-
-This MVP is intentionally focused on demonstrating the product thesis and technical architecture.
-
-Current limitations:
-
-- Data is mocked.
-- There is no persistent database yet.
-- There is no user authentication yet.
-- There is no real wallet connection yet.
-- Solana proof registration is simulated.
-- NFT-CTR minting is represented as a structured certificate object.
-- The proof URL represents the intended verification flow.
-- Supplier, customer, destination partner and municipality workflows are simplified for demo purposes.
-
-## Next Technical Milestone
-
-The next technical milestone is to replace the mock Solana proof with at least one real Solana Devnet transaction.
-
-Recommended path:
-
-1. Generate the CTR hash from critical lifecycle events.
-2. Connect to Solana Devnet.
-3. Submit a transaction or proof record containing the CTR hash or a reference to it.
-4. Confirm the transaction.
-5. Store the real transaction signature.
-6. Generate a real Solana Explorer link.
-7. Connect the real proof to the NFT-CTR certificate view.
-
-## Future Roadmap
-
-- Persistent database integration
-- User authentication
-- Supplier onboarding
-- Customer onboarding
-- Destination partner validation
-- Municipality dashboard
-- ESG reporting module
-- QR code verification
-- Wallet connection
-- Real Solana Devnet transactions
-- Metaplex-compatible NFT-CTR minting
-- API for waste compliance records
-- Expansion to other regulated waste streams
-- Circular economy data infrastructure
-
-## Submission Notes
-
-This MVP was built for hackathon evaluation and early product validation.
-
-The goal is to demonstrate how a real-world Web2 logistics workflow can become more transparent, auditable and valuable when connected to a Web3 public verification layer.
-
-CYKLOS is the infrastructure.
-
-CAÇAMBAR is the first operational application.
-
-Solana is the public verification layer.
-
-NFT-CTR is the compliance certificate.
-
-## License
-
-This project is currently published for hackathon evaluation and early-stage product validation.
