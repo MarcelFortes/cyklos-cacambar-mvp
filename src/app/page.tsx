@@ -18,7 +18,7 @@ import {
 
 const solutionCards = [
   {
-    title: "CYKLOS proof infrastructure",
+    title: "CYKLOS verification infrastructure",
     description:
       "Public verification layer for CTR hashes, Solana-ready proofs and auditable circular economy records.",
     icon: ShieldCheck,
