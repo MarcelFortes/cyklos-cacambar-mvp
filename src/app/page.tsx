@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+﻿import type { ReactNode } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -18,7 +18,7 @@ import {
 
 const solutionCards = [
   {
-    title: "CYKLOS verification infrastructure",
+    title: "CYKLOS proof infrastructure",
     description:
       "Public verification layer for CTR hashes, Solana-ready proofs and auditable circular economy records.",
     icon: ShieldCheck,
@@ -47,29 +47,29 @@ const solutionCards = [
 const journeySteps = [
   {
     number: "01",
-    title: "Solicitar",
-    detail: "Criar pedido",
+    title: "Request",
+    detail: "Create request",
     icon: ClipboardCheck,
     accent: "text-cacambar-orange",
   },
   {
     number: "02",
-    title: "Selecionar",
-    detail: "Select supplier",
+    title: "Select",
+    detail: "Choose supplier",
     icon: Boxes,
     accent: "text-cyklos-cyan",
   },
   {
     number: "03",
-    title: "Rastrear",
-    detail: "Acompanhar ciclo",
+    title: "Track",
+    detail: "Track lifecycle",
     icon: MapPin,
     accent: "text-cyklos-purple",
   },
   {
     number: "04",
-    title: "Verificar",
-    detail: "Emitir NFT-CTR",
+    title: "Verify",
+    detail: "Issue NFT-CTR",
     icon: ShieldCheck,
     accent: "text-cyklos-cyan",
   },
@@ -77,13 +77,13 @@ const journeySteps = [
 
 const technicalCards = [
   {
-    title: "Solana não é o banco de dados",
+    title: "Solana is not the database",
     description:
-      "Operational data remains off-chain. Critical cycle hashes are prepared for public verification on a Solana-ready layer.",
+      "Operational data remains off-chain. Critical lifecycle hashes are prepared for public verification through a Solana-ready proof layer.",
     icon: Database,
     accent: "cyklos",
     href: "/dashboard",
-    cta: "Saiba mais",
+    cta: "Learn more",
   },
   {
     title: "Operational flow first",
@@ -92,12 +92,12 @@ const technicalCards = [
     icon: ClipboardCheck,
     accent: "cacambar",
     href: "/request",
-    cta: "Explorar fluxo",
+    cta: "Explore flow",
   },
   {
     title: "Compliance certificate",
     description:
-      "The NFT-CTR turns each completed cycle into a verifiable certificate for ESG, public bids and audits.",
+      "The NFT-CTR turns each completed cycle into a verifiable certificate for ESG reporting, public tenders and audits.",
     icon: FileCheck2,
     accent: "purple",
     href: "/nft-ctr/NFT-CTR-0001",
@@ -261,7 +261,7 @@ export default function HomePage() {
               <ActionButton
                 href="/request"
                 variant="cacambar"
-                title="Start demo"
+                title="Start CAÇAMBAR Demo"
                 icon={
                   <ButtonIcon variant="cacambar">
                     <img
@@ -277,7 +277,7 @@ export default function HomePage() {
               <ActionButton
                 href="/dashboard"
                 variant="cyklos"
-                title="View dashboard"
+                title="View CYKLOS Dashboard"
                 icon={
                   <ButtonIcon variant="cyklos">
                     <img
@@ -293,7 +293,7 @@ export default function HomePage() {
               <ActionButton
                 href="/nft-ctr/NFT-CTR-0001"
                 variant="purple"
-                title="View certificate"
+                title="View NFT-CTR Certificate"
                 icon={
                   <ButtonIcon variant="purple">
                     <CreditCard size={21} />
